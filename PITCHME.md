@@ -41,6 +41,7 @@ What key does `ssh` / `git` actually use?
 Is there any better possibility to find an executable than probing each directory in `PATH`?
 No...
 
+#HSLIDE
 ## `ltrace`
 
 My program calls a library.
@@ -48,7 +49,7 @@ Which functions are really called?
 How often?
 Where is the actual code executed?
 
-
+#VSLIDE
 ### `latrace`
 
 Also observe inter-library calls.
@@ -64,10 +65,12 @@ What does `np.random.rand(10)` do?
 --> use Python's `_PyRandom_Init` which opens `/dev/urandom` which is the
 [kernel random number source device](https://linux.die.net/man/4/urandom).
 
+#HSLIDE
 ## `ptrace`
 
 See [Julia Evan's Blog](https://jvns.ca/blog/2016/06/12/a-weird-system-call-process-vm-readv/)
 
+#HSLIDE
 ## `perf`
 
 Interrupt the program in certain intervals (number of cycles).
@@ -89,9 +92,13 @@ linux-tools-common: /usr/bin/perf
 
 and kernel modules.
 
-
+#VSLIDE
 ### `perf top`
 
+
+#VSLIDE
 ### Flame Graphs
 
 Invented by [Brendan Gregg](http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)
+
+TODO: Insert example here
