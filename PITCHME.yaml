@@ -1,2 +1,3 @@
 theme : black
 vertical-center: false
+theme-override : .pitchme.css
