@@ -122,4 +122,7 @@ and kernel modules.
 
 Invented by [Brendan Gregg](http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)
 
-TODO: Insert example here
+```bash
+perf record -g python -c "import numpy as np; a=np.rand(1000, 1000);"
+perf script | ./stackcollapse-perf.pl | ./flamegraph.pl > out.svg 
+```
