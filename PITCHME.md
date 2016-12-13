@@ -78,10 +78,12 @@ What is it doing at this moment?
 
 Man Page:
 
-       Performance counters for Linux are a new kernel-based subsystem that
-       provide a framework for all things performance analysis. It covers
-       hardware level (CPU/PMU, Performance Monitoring Unit) features and
-       software features (software counters, tracepoints) as well.
+<i>
+“Performance counters for Linux are a new kernel-based subsystem that
+provide a framework for all things performance analysis. It covers
+hardware level (CPU/PMU, Performance Monitoring Unit) features and
+software features (software counters, tracepoints) as well.”
+</i>
 
 Therefore, you need to install
 
