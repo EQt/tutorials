@@ -20,25 +20,42 @@ Why should I care about that low level stuff?
 
 * Which libraries are loaded when I call my Python script?
 * Problem: `ldd` only shows the linked libraries, not the dynamically loaded ones.
+* Changed a file, but no effect. Is it opened at all?
 
+
+#VSLIDE
+## Example
 ```bash
-    strace  python -c 'import numpy as np; a=np.ones(10); b=np.ones(10); d = a*b' 2> out
-    grep  'lib.*.so.* = 0$' out
+echo <<<EOF > script.py
+import numpy as np
+a=np.ones(10)
+b=np.ones(10)
+d = a*b'
+EOF
+
+strace  python script.py  2> out
+grep  'lib.*.so.* = 0$' out
 ```
 
-Changed a file, but no effect. Is it opened at all?
 
 [Further Reading](http://hokstad.com/5-simple-ways-to-troubleshoot-using-strace)
 
 #VSLIDE
-### SSH Keys
+## SSH Keys
 
 I cannot connect via `ssh` with my generated key.
+<br>
 What key does `ssh` / `git` actually use?
 
-### How does `which` work?
+```bash
+strace -e trace=file git push
+```
+
+#VSLIDE
+## How does `which` work?
 
 Is there any better possibility to find an executable than probing each directory in `PATH`?
+<br>
 No...
 
 #HSLIDE
@@ -50,7 +67,7 @@ How often?
 Where is the actual code executed?
 
 #VSLIDE
-### `latrace`
+## `latrace`
 
 Also observe inter-library calls.
 
