@@ -1,30 +1,36 @@
-# How To Trace Running Programs
+#HSLIDE
+## How To Trace Running Programs
 
-Often it is hard, to read the complete source code to find out what is going on, why something fails, etc.
-Observe what your program actually does, in reality.
-
-But I do Python.
+I program Python.
+<br>
 Why should I care about that low level stuff?
 
-* Might be helpful for finding problems
+<!-- Often it is hard, to read the complete source code to find out what is going on, why something fails, etc. -->
 
+* Might be helpful for finding problems:
+* Often hard to read the complete source
+* Observe what your program actually does, in *reality*.
+
+#HSLIDE
 ## `strace`
 
-Why does Python use this setting? Should be a different one because I configured it there...
-Where is this configuration file?
+* Why does Python use this setting?
+* Should be a different one because I configured it there...
+* Where is this configuration file?
 
-Which libraries are loaded when I call my Python script?
-Problem: `ldd` only shows the linked libraries, not the dynamically loaded ones.
+* Which libraries are loaded when I call my Python script?
+* Problem: `ldd` only shows the linked libraries, not the dynamically loaded ones.
 
+```bash
     strace  python -c 'import numpy as np; a=np.ones(10); b=np.ones(10); d = a*b' 2> out
     grep  'lib.*.so.* = 0$' out
-    
+```
 
 Changed a file, but no effect. Is it opened at all?
 
 [Further Reading](http://hokstad.com/5-simple-ways-to-troubleshoot-using-strace)
 
-
+#VSLIDE
 ### SSH Keys
 
 I cannot connect via `ssh` with my generated key.
