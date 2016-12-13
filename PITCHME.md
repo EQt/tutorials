@@ -96,10 +96,12 @@ What is it doing at this moment?
 Man Page:
 
 <i>
+<span font-size=0.7em>
 “Performance counters for Linux are a new kernel-based subsystem that
 provide a framework for all things performance analysis. It covers
 hardware level (CPU/PMU, Performance Monitoring Unit) features and
 software features (software counters, tracepoints) as well.”
+</span>
 </i>
 
 Therefore, you need to install
